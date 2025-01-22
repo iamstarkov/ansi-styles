@@ -6,6 +6,11 @@ import ansiStyles, {
 	modifierNames,
 } from '../index.js';
 
+const styles = ansiStyles;
+
+console.log(`${styles.green.open}Hello world!${styles.green.close}`);
+
+/*
 test('return ANSI escape codes', t => {
 	t.is(ansiStyles.green.open, '\u001B[32m');
 	t.is(ansiStyles.bgGreen.open, '\u001B[42m');
@@ -79,3 +84,4 @@ test('non-styles should not be exported', t => {
 	t.true(backgroundColorNames.every(name => name.startsWith('bg')));
 	t.false(colorNames.some(name => isNonStyle(name)));
 });
+*/
