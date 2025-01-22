@@ -13,4 +13,16 @@ jobs:
           node-version: 22
       - run: npm install
       - run: node demo.js
+      - name: Gitops prep
+        id: prep
+        if: ${{ steps.commit-info.outputs.skip-build == 'false' }}
+        uses: actions/github-script@v7
+        with:
+          script: | #```typescript
+            function green(str) { return `\u001B[32m${str}\u001B[39m` }
+
+            console.log(green('console green'));
+            core.info(green('core info green'));
+          #```
+
       - run: npm test
