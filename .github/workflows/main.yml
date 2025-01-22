@@ -12,5 +12,5 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      - run: node test/demo.js
+      - run: node demo.js
       - run: npm test
